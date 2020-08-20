@@ -1,0 +1,367 @@
+/* PROMO BOXES */
+
+/**
+ * Reset Link Styles
+ */
+.vc-custom-promo-box:hover,
+.vc-custom-promo-box:focus {
+	opacity: 1;
+	text-decoration: none;
+}
+
+/**
+ * Global Promo Styles
+ */
+.vc-custom-promo-box,
+.vc-promo-bg,
+.vc-custom-promo-box .content,
+.vc-promo-header,
+.vc-promo-text {
+	backface-visibility: hidden;
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+}
+.vc-custom-promo-box {
+	position: relative;
+	display: block;
+	max-height: 450px;
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+	background-color: rgba(128, 128, 128, 0.3); /* Transparency for IE9 */
+	-webkit-transition: background ease .5s;
+    -o-transition: background ease .5s;
+    transition: background ease .5s;
+	opacity: 1;
+	overflow: hidden;
+}
+.vc-custom-promo-box:before {
+	display: block;
+    content: "";
+    width: 100%;
+    padding-top: 100%;
+	-webkit-transition: background ease .5s;
+    -o-transition: background ease .5s;
+	transition: background .5s ease;
+}
+.vc-promo-bg {
+   position: absolute;
+   top: 0;
+   left: 0;
+   bottom: 0;
+   right: 0;
+   background-size: cover;
+   background-position: center;
+   z-index: -1;
+}
+.vc-custom-promo-box .content {
+	position: absolute;
+    left: 0;
+    right: 0;
+	width: 100%; /* Fixes IE bug */
+    bottom: 50%;
+	max-width: 450px;
+    padding: 15px;
+	margin-left: auto;
+	margin-right: auto;
+    -webkit-transform: translateY(50%);
+    -ms-transform: translateY(50%);
+    -o-transform: translateY(50%);
+    transform: translateY(50%);
+    -webkit-transition: all ease .5s;
+    -o-transition: all ease .5s;
+    transition: all ease .5s;
+    transition-property: opacity, transform;
+    z-index: 1;
+}
+.vc-custom-promo-box .content :last-child {
+	margin-bottom: 0;
+}
+
+.vc-custom-promo-box .content .promo-icon {
+	width: 36%;
+	max-width: 115px;
+	height: auto;
+	margin-bottom: 10%;
+}
+
+.vc-custom-promo-box.text-slide-up-with-gradient:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 100%;
+	background: -webkit-linear-gradient(bottom,rgba(0,0,0,.5) 0,transparent 100%);
+	background: -o-linear-gradient(bottom,rgba(0,0,0,.5) 0,transparent 100%);
+	background: linear-gradient(to top,rgba(0,0,0,.5) 0,transparent 100%);
+	-webkit-transition: all ease .5s;
+	-o-transition: all ease .5s;
+	transition: all ease .5s;
+}
+
+/**
+ * Text Animations
+ */
+.vc-promo-header {
+	margin-bottom: 15px;
+}
+.vc-promo-header,
+.vc-promo-text {
+	line-height: normal;
+}
+@media only screen and (min-width: 992px) {
+	.vc-custom-promo-box.text-fancy-reveal .content {
+	    -webkit-transform: translateY(60%);
+	    -ms-transform: translateY(60%);
+	    -o-transform: translateY(60%);
+	    transform: translateY(60%);
+	    -webkit-transition: transform ease .5s;
+	    -o-transition: transform ease .5s;
+	    transition: transform ease .5s;
+	    z-index: 1;
+	}
+	.vc-custom-promo-box.text-fancy-reveal:hover .content {
+	    -webkit-transform: translateY(50%);
+	    -ms-transform: translateY(50%);
+	    -o-transform: translateY(50%);
+	    transform: translateY(50%);
+	}
+	.vc-custom-promo-box.text-fancy-reveal .vc-promo-text {
+	    opacity: 0;
+	    -webkit-transition: opacity .5s ease .15s;
+	    -o-transition: opacity .5s ease .15s;
+	    transition: opacity .5s ease .15s;
+	}
+	.vc-custom-promo-box.text-fancy-reveal:hover .vc-promo-text{
+	    opacity: 1;
+	}
+
+
+	.vc-custom-promo-box.text-fade-in .content {
+		opacity: 0;
+	}
+	.vc-custom-promo-box.text-fade-in:hover .content {
+		opacity: 1;
+	}
+	.vc-custom-promo-box.text-fade-out .content {
+		opacity: 1;
+	}
+	.vc-custom-promo-box.text-fade-out:hover .content {
+		opacity: 0;
+	}
+	.vc-custom-promo-box.text-slide-up .content,
+	.vc-custom-promo-box.text-slide-up-with-gradient .content {
+	    bottom: 90px;
+	    -webkit-transform: translateY(100%);
+	    -ms-transform: translateY(100%);
+	    -o-transform: translateY(100%);
+	    transform: translateY(100%);
+	    -webkit-transition: transform ease .5s;
+	    -o-transition: transform ease .5s;
+	    transition: transform ease .5s;
+	    z-index: 1;
+	}
+	.vc-custom-promo-box.text-slide-up:hover .content,
+	.vc-custom-promo-box.text-slide-up-with-gradient:hover .content {
+	    -webkit-transform: translateY(50%);
+	    -ms-transform: translateY(50%);
+	    -o-transform: translateY(50%);
+	    transform: translateY(50%);
+	}
+	.vc-custom-promo-box.text-slide-up .vc-promo-text,
+	.vc-custom-promo-box.text-slide-up-with-gradient .vc-promo-text {
+	    opacity: 0;
+	    -webkit-transition: opacity .5s ease .15s;
+	    -o-transition: opacity .5s ease .15s;
+	    transition: opacity .5s ease .15s;
+	}
+	.vc-custom-promo-box.text-slide-up:hover .vc-promo-text,
+	.vc-custom-promo-box.text-slide-up-with-gradient:hover .vc-promo-text {
+	    opacity: 1;
+	}
+	
+	.vc-custom-promo-box.text-slide-up-with-gradient:after {
+		height: 50%;
+	}
+	.vc-custom-promo-box.text-slide-up-with-gradient:hover:after {
+		height: 100%;
+	}
+}
+
+
+
+/**
+ * Background Animations
+ *
+ */
+.vc-custom-promo-box.bg-fade-from-light:before {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.vc-custom-promo-box.bg-fade-from-light:hover:before {
+	background-color: rgba(255, 255, 255, 0);
+}
+.vc-custom-promo-box.bg-fade-from-dark:before {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.vc-custom-promo-box.bg-fade-from-dark:hover:before {
+	background-color: rgba(0, 0, 0, 0);
+}
+.vc-custom-promo-box.bg-fade-to-light:before {
+	background-color: rgba(255, 255, 255, 0);
+}
+.vc-custom-promo-box.bg-fade-to-light:hover:before {
+	background-color: rgba(255, 255, 255, 0.3);
+}
+.vc-custom-promo-box.bg-fade-to-dark:before {
+	background-color: rgba(0, 0, 0, 0);
+}
+.vc-custom-promo-box.bg-fade-to-dark:hover:before {
+	background-color: rgba(0, 0, 0, 0.3);
+}
+.vc-promo-bg {
+	-webkit-transition: transform ease .5s;
+    -o-transition: transform ease .5s;
+    transition: transform ease .5s;
+}
+.vc-custom-promo-box.bg-zoom-in .vc-promo-bg {
+	transform: scale(1);
+}
+.vc-custom-promo-box.bg-zoom-in:hover .vc-promo-bg {
+	transform: scale(1.1);
+}
+.vc-custom-promo-box.bg-zoom-out .vc-promo-bg {
+	transform: scale(1.1);
+}
+.vc-custom-promo-box.bg-zoom-out:hover .vc-promo-bg {
+	transform: scale(1);
+}
+
+
+
+/**
+ * Print
+ */
+@media print {
+	.vc-custom-promo-box:before {
+		display: none;
+	}
+	.vc-custom-promo-box .content,
+	.vc-custom-promo-box:hover .content {
+		position: relative;
+		transform: translateY(0) !important;
+		opacity: 1;
+	}
+}
+
+/* END PROMO BOXES */
+
+/* IMAGE CAPTION */
+
+.vc-img-credit,
+.vc-img-credit img {
+    max-width: 100%;
+    height: auto;
+}
+.vc-img-credit {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+.vc-img-credit .img-wrapper {
+	position: relative;
+	margin-bottom: 15px;
+}
+.vc-img-credit img {
+	width: 100%;
+	margin: 0;
+}
+.vc-img-credit .photo-credit {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin-bottom: 5px;
+	margin-right: 5px;
+	color: #fff;
+	font-size: 10px;
+}
+
+/* END IMAGE CAPTION */
+
+
+/* NUMBER COUNTERS */
+
+.vc-number-counter {
+	text-align: center;
+}
+
+
+/* END NUMBER COUNTERS */
+
+/* CALLOUT BOX */
+.vc-callout-box {
+	background: #f2f2f2;
+	margin-top: 8px;
+	margin-bottom: 35px;
+}
+
+	.vc-callout-box	.vc-callout-box__image {
+	    height: 100%;
+	    flex: 45%;
+	    align-self: center;
+	}	
+
+		.vc-callout-box	.vc-callout-box__image img {
+			width: 100%;
+			max-width: 100%;
+		}    
+
+	.vc-callout-box .vc-callout-box__content {
+	    padding: 20px 30px;
+	    font-size: 80%;
+	    line-height: 150%;
+	    flex: 55%;
+	    -ms-flex:0 1 auto;
+	    align-self: center;
+	}
+
+	.vc-callout-box .vc-callout-box__content > * {
+		margin-bottom: 15px;
+	}
+
+@media (min-width: 768px) {
+	.vc-callout-box.horizontal {
+		display: flex;
+	}
+
+	.vc-callout-box.horizontal.img_right {
+		flex-direction: row-reverse;
+	}	
+}	
+
+/* END CALLOUT BOX */
+
+/* AUTHOR BLOCKQUOTE */
+
+.vc-author-blockquote {
+    text-align: center;
+}
+
+.vc-author-blockquote__author-image img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;
+    width: 145px;
+    height: 145px;
+}
+
+.vc-author-blockquote__quote {
+    margin-bottom: 20px;
+    padding: 0;
+}
+
+.vc-author-blockquote__author {
+    text-align: center;
+}
+
