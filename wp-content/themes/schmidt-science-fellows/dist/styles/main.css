@@ -4428,5 +4428,20 @@ button.mfp-close {
 .icon-linkedin2:before {
   content: ""
 }
-
+.hoverinfo {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.hoverinfo p {
+  display: none;
+  color: #000000;
+}
+.hoverinfo:hover p {
+  background-color: rgba(255, 255, 255, 0.7);
+  display: block;
+}
 /*# sourceMappingURL=main.css.map */
