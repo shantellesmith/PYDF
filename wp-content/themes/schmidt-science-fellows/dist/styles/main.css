@@ -4428,17 +4428,35 @@ button.mfp-close {
 .icon-linkedin2:before {
   content: ""
 }
-.hoverinfo {
+.hoverinfo .daniel {
   position: absolute;
   top: 15px;
   left: 15px;
   font-size: 28px;
-  color: #ffffff;
+  color: black;
+  cursor: pointer;
+}
+
+.hoverinfo .wiehan {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: black;
+  cursor: pointer;
+}
+
+.hoverinfo .ruan {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
+  color: black;
   cursor: pointer;
 }
 .hoverinfo p {
   display: none;
-  color: #000000;
+  color: black;
 }
 .hoverinfo:hover p {
   background-color: rgba(255, 255, 255, 0.7);
