@@ -2886,7 +2886,7 @@ header.banner .brand svg {
   bottom: -10px;
   left: -10px;
   right: -10px;
-  
+
   opacity: 1;
   transition: opacity 1s linear
 }
@@ -3009,6 +3009,12 @@ header.banner .brand svg {
 }
 
 .sub-nav .menu-item a.active, .sub-nav__link.active {
+  color: #309b98;
+  opacity: 1;
+  border-bottom: 4px solid #309b98
+}
+
+a#highlight {
   border-bottom: 4px solid #309b98
 }
 
