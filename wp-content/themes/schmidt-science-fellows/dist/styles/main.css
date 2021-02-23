@@ -2886,7 +2886,7 @@ header.banner .brand svg {
   bottom: -10px;
   left: -10px;
   right: -10px;
-  filter: blur(10px);
+  
   opacity: 1;
   transition: opacity 1s linear
 }
