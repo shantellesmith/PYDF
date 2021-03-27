@@ -4468,3 +4468,24 @@ button.mfp-close {
   display: block;
 }
 /*# sourceMappingURL=main.css.map */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.gallery {
+  background: white;
+  color: white;
+}
+
+.gallery-cell {
+  width: 66%;
+  height: 500px;
+  margin-right: 10px;
+  counter-increment: gallery-cell;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
