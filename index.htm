@@ -7,40 +7,35 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script>
-    // Prevents flash of unstyle cotnent for JS manipulated elements.
-    document.querySelector('html').classList.remove('no-js');
-  </script>
-  <script>
-    var et_site_url = '';
-    var et_post_id = '4';
-
-    function et_core_page_resource_fallback(a, b) {
-      "undefined" === typeof b && (b = a.sheet.cssRules && 0 === a.sheet.cssRules.length);
-      b && (a.onerror = null, a.onload = null, a.href ? a.href = et_site_url + "/?et_core_page_resource=" + a.id + et_post_id : a.src && (a.src = et_site_url + "/?et_core_page_resource=" + a.id + et_post_id))
-    }
-  </script>
-
   <link rel='dns-prefetch' href='//cdn.jsdelivr.net'>
   <link rel='dns-prefetch' href='//fonts.googleapis.com'>
   <link href='https://fonts.gstatic.com' crossorigin="" rel='preconnect'>
-
-  <link rel='stylesheet' id='wp-block-library-css' href='wp-includes\css\dist\block-library\style.min.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc_extend_style-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-img-credits-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-callout-box-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-author-blockquote-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='et_monarch-css-css' href='wp-content\plugins\monarch\css\style.css?ver=1.4.12' type='text/css' media='all'>
+<!--
+  <link rel='stylesheet' id='wp-block-library-css' href='../wp-includes/css/dist/block-library/style.min.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc_extend_style-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-img-credits-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-callout-box-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-author-blockquote-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='et_monarch-css-css' href='../wp-content/plugins/monarch/css/style.css?ver=1.4.12' type='text/css' media='all'>
 
   <link rel='stylesheet' id='jsdelivr-styles-css' href='https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='js_composer_front-css' href='wp-content\plugins\js_composer\assets\css\js_composer.min.css?ver=6.2.0' type='text/css' media='all'>
+  <link rel='stylesheet' id='js_composer_front-css' href='../wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.2.0' type='text/css' media='all'>
   <link rel='stylesheet' id='bsf-Defaults-css' href='https://schmidtsciencefellows.org/wp-content/uploads/smile_fonts/Defaults/Defaults.css?ver=3.19.5' type='text/css' media='all'>
-  <link rel='stylesheet' id='sage/css-css' href='wp-content\themes\schmidt-science-fellows\dist\styles\main.css?ver=1597074847' type='text/css' media='all'>
+-->
+  <link rel='stylesheet' id='sage/css-css' href='../wp-content/themes/schmidt-science-fellows/dist/styles/main.css?ver=1597074847' type='text/css' media='all'>
 
-  <script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4-wp'></script>
-  <script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
-  <link rel='https://api.w.org/' href='wp-json\index.json'>
-  <link rel='shortlink' href='index.htm'>
+  <link rel='shortlink' href='index.htm?p=6'>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT40PMEZ45"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-TT40PMEZ45');
+  </script>
+
   <style type="text/css" id="et-social-custom-css"></style>
   <style type="text/css">
     .recentcomments a {
@@ -49,22 +44,22 @@
       margin: 0 !important;
     }
   </style>
-  <link rel="icon" href="wp-content\uploads\PYDF_Emblem_Transparent (1).png" sizes="32x32">
-  <link rel="icon" href="wp-content\uploads\PYDF_Emblem_Transparent (1).png" sizes="192x192">
-  <link rel="apple-touch-icon" href="wp-content\uploads\PYDF_Emblem_Transparent (1).png" sizes="180x180">
-  <meta name="msapplication-TileImage" content="https://schmidtsciencefellows.org/wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="270x270">
+  <link rel="icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="32x32">
+  <link rel="icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="270x270">
 
   <style type="text/css" data-type="vc_shortcodes-custom-css">
-    .vc_custom_1567187526429 {
-      padding-top: 40px !important;
-      padding-bottom: 40px !important;
-      background-color: #f5f8f8 !important;
+    .vc_custom_1565726338537 {
+      margin-bottom: -80px !important;
     }
-  </style>
-
-  <!-- Add icon library -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+  </style><noscript>
+    <style>
+      .wpb_animate_when_almost_visible {
+        opacity: 1;
+      }
+    </style>
+  </noscript>
 </head>
 
 <body class="home page-template page-template-template-full-width page-template-template-full-width-php page page-id-4 cookies-not-set et_monarch no-masthead wpb-js-composer js-comp-ver-6.2.0 vc_responsive">
