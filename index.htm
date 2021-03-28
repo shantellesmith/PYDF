@@ -10,27 +10,21 @@
   <link rel='dns-prefetch' href='//cdn.jsdelivr.net'>
   <link rel='dns-prefetch' href='//fonts.googleapis.com'>
   <link href='https://fonts.gstatic.com' crossorigin="" rel='preconnect'>
-<!--
-  <link rel='stylesheet' id='wp-block-library-css' href='../wp-includes/css/dist/block-library/style.min.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc_extend_style-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-img-credits-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-callout-box-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='vc-author-blockquote-css' href='../wp-content/plugins/visceral-vc-visceral-addons-d9d7e2b0b20b/assets/vc_extend.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='et_monarch-css-css' href='../wp-content/plugins/monarch/css/style.css?ver=1.4.12' type='text/css' media='all'>
 
-  <link rel='stylesheet' id='jsdelivr-styles-css' href='https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css?ver=5.4.2' type='text/css' media='all'>
-  <link rel='stylesheet' id='js_composer_front-css' href='../wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=6.2.0' type='text/css' media='all'>
-  <link rel='stylesheet' id='bsf-Defaults-css' href='https://schmidtsciencefellows.org/wp-content/uploads/smile_fonts/Defaults/Defaults.css?ver=3.19.5' type='text/css' media='all'>
--->
-  <link rel='stylesheet' id='sage/css-css' href='../wp-content/themes/schmidt-science-fellows/dist/styles/main.css?ver=1597074847' type='text/css' media='all'>
-
+  <link rel='stylesheet' id='sage/css-css' href='wp-content/themes/schmidt-science-fellows/dist/styles/main.css' type='text/css' media='all'>
+  <script src="wp-content/themes/schmidt-science-fellows/dist/scripts/main.js"></script>
+  <script src="wp-includes/js/jquery/jquery-migrate.min.js"></script>
+  <script src="wp-includes/js/jquery/jquery.js"></script>
   <link rel='shortlink' href='index.htm?p=6'>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-TT40PMEZ45"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'G-TT40PMEZ45');
@@ -44,10 +38,36 @@
       margin: 0 !important;
     }
   </style>
-  <link rel="icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="32x32">
-  <link rel="icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="192x192">
-  <link rel="apple-touch-icon" href="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="180x180">
-  <meta name="msapplication-TileImage" content="../wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="270x270">
+
+  <script>
+    var et_site_url = '';
+    var et_post_id = '4';
+
+    function et_core_page_resource_fallback(a, b) {
+      "undefined" === typeof b && (b = a.sheet.cssRules && 0 === a.sheet.cssRules.length);
+      b && (a.onerror = null, a.onload = null, a.href ? a.href = et_site_url + "/?et_core_page_resource=" + a.id + et_post_id : a.src && (a.src = et_site_url + "/?et_core_page_resource=" + a.id + et_post_id))
+    }
+  </script>
+
+  <link rel='stylesheet' id='wp-block-library-css' href='wp-includes\css\dist\block-library\style.min.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc_extend_style-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-img-credits-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-callout-box-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='vc-author-blockquote-css' href='wp-content\plugins\visceral-vc-visceral-addons-d9d7e2b0b20b\assets\vc_extend.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='et_monarch-css-css' href='wp-content\plugins\monarch\css\style.css?ver=1.4.12' type='text/css' media='all'>
+
+  <link rel='stylesheet' id='jsdelivr-styles-css' href='https://cdn.jsdelivr.net/npm/magnific-popup@1.1.0/dist/magnific-popup.min.css?ver=5.4.2' type='text/css' media='all'>
+  <link rel='stylesheet' id='js_composer_front-css' href='wp-content\plugins\js_composer\assets\css\js_composer.min.css?ver=6.2.0' type='text/css' media='all'>
+  <link rel='stylesheet' id='sage/css-css' href='wp-content\themes\schmidt-science-fellows\dist\styles\main.css?ver=1597074847' type='text/css' media='all'>
+
+  <script type='text/javascript' src='wp-includes\js\jquery\jquery.js?ver=1.12.4-wp'></script>
+  <script type='text/javascript' src='wp-includes\js\jquery\jquery-migrate.min.js?ver=1.4.1'></script>
+  <link rel='https://api.w.org/' href='wp-json\index.json'>
+
+  <link rel="icon" href="wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="32x32">
+  <link rel="icon" href="wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="192x192">
+  <link rel="apple-touch-icon" href="wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="180x180">
+  <meta name="msapplication-TileImage" content="wp-content/uploads/PYDF_Emblem_Transparent (1).png" sizes="270x270">
 
   <style type="text/css" data-type="vc_shortcodes-custom-css">
     .vc_custom_1565726338537 {
@@ -132,8 +152,7 @@
           </div>
         </div>
 
-
-      <!--<div class="vc_row-full-width vc_clearfix">
+        <!--<div class="vc_row-full-width vc_clearfix">
         </div>
         <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
           <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -199,6 +218,7 @@
             </div>
           </div>
         </div>-->
+
         <div class="vc_row-full-width vc_clearfix"></div>
         <div class="vc_row wpb_row vc_row-fluid container">
           <div class="wpb_column vc_column_container vc_col-sm-12 vc_col-lg-offset-2 vc_col-lg-8">
@@ -217,7 +237,7 @@
                       </div>
                       <div class="slide quote-slide">
                         <blockquote class="quote-slide__blockquote">
-                          <p class="quote-slide__text">"I liked the program because the directors care about us. They even offer us food."</p>
+                          <p class="quote-slide__text">"I liked the program because the directors care about us."</p>
                           <div class="quote-slide__author-wrap">
                             <p class="quote-slide__author"><cite class="quote-slide__name">Kayamandi Secondary School Student</cite></p>
                           </div>
@@ -241,7 +261,8 @@
                       </div>
                       <div class="slide quote-slide">
                         <blockquote class="quote-slide__blockquote">
-                          <p class="quote-slide__text">"This program helped me in many things but I’ll certainly want to stay focused, involving being true to myself as a person. So I thank you guys you helped me a lot because I am back to myself, I wasn’t trusting myself before but now I do."</p>
+                          <p class="quote-slide__text">"This program helped me in many things but I’ll certainly want to stay focused, involving being true to myself as a person. So I thank you guys you helped me a lot because I am back to myself, I
+                            wasn’t trusting myself before but now I do."</p>
                           <div class="quote-slide__author-wrap">
                             <p class="quote-slide__author"><cite class="quote-slide__name">Kayamandi Secondary School Student</cite></p>
                           </div>
@@ -257,7 +278,8 @@
                       </div>
                       <div class="slide quote-slide">
                         <blockquote class="quote-slide__blockquote">
-                          <p class="quote-slide__text">"I liked the explanations of the various benefits to be gained from the techniques we were taught. It helps stress the importance of the activities as not mere games but valuable psychological lessons"</p>
+                          <p class="quote-slide__text">"I liked the explanations of the various benefits to be gained from the techniques we were taught. It helps stress the importance of the activities as not mere games but valuable psychological
+                            lessons"</p>
                           <div class="quote-slide__author-wrap">
                             <p class="quote-slide__author"><cite class="quote-slide__name">PYDF Trainer</cite></p>
                           </div>
@@ -281,7 +303,8 @@
                       </div>
                       <div class="slide quote-slide">
                         <blockquote class="quote-slide__blockquote">
-                          <p class="quote-slide__text">"I think it’s such a fantastic intervention for teaching important life skills. As we are constantly learning new things and reaching new heights, without realising it. Also, the fun of it cannot be overlooked."</p>
+                          <p class="quote-slide__text">"I think it’s such a fantastic intervention for teaching important life skills. As we are constantly learning new things and reaching new heights, without realising it. Also, the fun of it cannot
+                            be overlooked."</p>
                           <div class="quote-slide__author-wrap">
                             <p class="quote-slide__author"><cite class="quote-slide__name">PYDF Trainer</cite></p>
                           </div>
@@ -315,6 +338,7 @@
       </main><!-- /.main -->
     </div><!-- /.content -->
   </div><!-- /.wrap -->
+
   <footer class="footer">
     <div class="container">
       <div class="row">
@@ -328,8 +352,8 @@
           <nav class="footer__nav">
             <div class="menu-footer-navigation-container">
               <ul id="menu-footer-navigation" class="nav list-inline">
-                <li id="menu-item-twitter" class="menu-item menu-item-twitter"><a href="https://twitter.com/pydfoundationZA" ><span class="icon-twitter"></span> Twitter</a></li>
-                <li id="menu-item-facebook" class="menu-item menu-item-facebook"><a href="https://www.facebook.com/pydfoundation" ><span class="icon-facebook"></span> Facebook</a></li>
+                <li id="menu-item-twitter" class="menu-item menu-item-twitter"><a href="https://twitter.com/pydfoundationZA"><span class="icon-twitter"></span> Twitter</a></li>
+                <li id="menu-item-facebook" class="menu-item menu-item-facebook"><a href="https://www.facebook.com/pydfoundation"><span class="icon-facebook"></span> Facebook</a></li>
                 <li id="menu-item-34" class="menu-item menu-item-34"><a href="contact\index.htm">Contact</a></li>
                 <!--<li id="menu-item-3228" class="menu-item menu-item-3228"><a href="legal\index.htm">Legal</a></li>-->
               </ul>
@@ -342,23 +366,8 @@
     </div>
   </footer>
 
-  <script type='text/javascript' src='wp-content\plugins\monarch\js\idle-timer.min.js?ver=1.4.12'></script>
-  <script type='text/javascript'>
-    /* <![CDATA[ */
-    var monarchSettings = {
-      "ajaxurl": "https:\/\/schmidtsciencefellows.org\/wp-admin\/admin-ajax.php",
-      "pageurl": "https:\/\/schmidtsciencefellows.org\/",
-      "stats_nonce": "b3c6b2f2e5",
-      "share_counts": "46a657f413",
-      "follow_counts": "9241e557a2",
-      "total_counts": "294becbcaf",
-      "media_single": "7c9efc67c4",
-      "media_total": "b28ff945e4",
-      "generate_all_window_nonce": "98ec190c59",
-      "no_img_message": "No images available for sharing on this page"
-    };
-    /* ]]> */
-  </script>
+  <div id='donatebutton'><a href="donate/index.htm"><img src='wp-content/uploads/PayFast black logo_edit_orange.png' alt='Donate' /></a></div>
+
   <script type='text/javascript' src='wp-content\plugins\monarch\js\custom.js?ver=1.4.12'></script>
   <script type='text/javascript' src='https://cdn.jsdelivr.net/combine/npm/slick-carousel@1.7.1,npm/jquery.counterup@2.1.0,npm/magnific-popup@1.1.0,npm/waypoints@4.0.1/lib/jquery.waypoints.min.js'></script>
   <script type='text/javascript' src='wp-content\plugins\monarch\core\admin\js\common.js?ver=3.20.2'></script>
@@ -368,8 +377,6 @@
   <script>
     jQuery('html').counterUp || document.write('<script src="https://schmidtsciencefellows.org/wp-content/themes/schmidt-science-fellows/dist/scripts/cdnfallback.js">');
   </script>
-
-
 </body>
 
 </html>
