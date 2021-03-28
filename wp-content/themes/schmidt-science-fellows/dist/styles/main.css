@@ -1109,7 +1109,8 @@ img[src*=".svg"], table {
 blockquote {
   text-align: center;
   padding-top: 50px;
-  position: relative
+  position: relative;
+  padding-bottom: 15px;
 }
 
 blockquote p {
@@ -2886,7 +2887,6 @@ header.banner .brand svg {
   bottom: -10px;
   left: -10px;
   right: -10px;
-
   opacity: 1;
   transition: opacity 1s linear
 }
@@ -4433,6 +4433,7 @@ button.mfp-close {
 .icon-linkedin2:before {
   content: ""
 }
+
 .hoverinfo .daniel {
   position: absolute;
   top: 15px;
@@ -4459,21 +4460,18 @@ button.mfp-close {
   color: black;
   cursor: pointer;
 }
+
 .hoverinfo p {
   display: none;
   color: black;
 }
+
 .hoverinfo:hover p {
   background-color: rgba(255, 255, 255, 0.7);
   display: block;
 }
+
 /*# sourceMappingURL=main.css.map */
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .gallery {
   background: white;
   color: white;
@@ -4488,4 +4486,13 @@ button.mfp-close {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#donatebutton {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 0;
+  width: 12%;
 }
