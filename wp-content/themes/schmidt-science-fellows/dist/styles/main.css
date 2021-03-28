@@ -4488,11 +4488,24 @@ button.mfp-close {
   justify-content: center;
 }
 
-#donatebutton {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  margin: 0;
-  padding: 0;
-  width: 12%;
+@media only screen and (max-device-width : 1024px) {
+  #donatebutton {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 30%;
+  }
+}
+
+@media screen and (min-width:1025px) {
+  #donatebutton {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 12%;
+  }
 }
