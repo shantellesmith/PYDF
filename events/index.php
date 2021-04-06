@@ -1,11 +1,64 @@
-<!doctype html>
+<?php
+/**
+ * @param array $data
+ * @param null $passPhrase
+ * @return string
+ */
+function generateSignature($data, $passPhrase = null) {
+    // Create parameter string
+    $pfOutput = '';
+    foreach( $data as $key => $val ) {
+        if($val !== '') {
+            $pfOutput .= $key .'='. urlencode( trim( $val ) ) .'&';
+        }
+    }
+    // Remove last ampersand
+    $getString = substr( $pfOutput, 0, -1 );
+    if( $passPhrase !== null ) {
+        $getString .= '&passphrase='. urlencode( trim( $passPhrase ) );
+    }
+    return md5( $getString );
+}
+// Construct variables
+$cartTotal = 150.00;// This amount needs to be sourced from your application
+$data = array(
+    // Merchant details
+    'merchant_id' => '10000100',
+    'merchant_key' => '46f0cd694581a',
+    'return_url' => 'https://www.pydfoundation.org/events/index.php',
+    'cancel_url' => 'https://www.pydfoundation.org/events/index.php',
+    'notify_url' => 'https://www.pydfoundation.org/wp-content/themes/schmidt-science-fellows/dist/scripts/notify.php',
+    // Buyer details
+    'name_first' => 'First Name',
+    'name_last'  => 'Last Name',
+    'email_address'=> 'test@test.com',
+    // Transaction details
+    'm_payment_id' => '1', //Unique payment ID to pass through to notify_url
+    'amount' => number_format( sprintf( '%.2f', $cartTotal ), 2, '.', '' ),
+    'item_name' => 'Order#1'
+);
+
+$signature = generateSignature($data);
+$data['signature'] = $signature;
+
+// If in testing mode make use of either sandbox.payfast.co.za or www.payfast.co.za
+$testingMode = true;
+$pfHost = $testingMode ? 'sandbox.payfast.co.za' : 'www.payfast.co.za';
+$htmlForm = '<form action="https://'.$pfHost.'/eng/process" method="post">';
+foreach($data as $name=> $value)
+{
+    $htmlForm .= '<input name="'.$name.'" type="hidden" value=\''.$value.'\' />';
+}
+$htmlForm .= '<button type="submit" value="Submit" /></form>';
+
+?>
+
 <html lang="en-US" class="no-js">
 
 <head>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
 
   <link rel='dns-prefetch' href='//cdn.jsdelivr.net'>
   <link rel='dns-prefetch' href='//fonts.googleapis.com'>
@@ -64,6 +117,22 @@
       }
     </style>
   </noscript>
+  <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+  <script>
+    function SubForm() {
+      $.ajax({
+        url: 'https://api.apispreadsheets.com/data/10536/',
+        type: 'post',
+        data: $("#myForm").serializeArray(),
+        success: function() {
+          alert("Form Data Submitted! Thank you for your response")
+        },
+        error: function() {
+          alert("There was an error! Please try again")
+        }
+      });
+    }
+  </script>
 </head>
 
 <body class="page-template-default page page-id-3028 page-parent cookies-not-set et_monarch about-us wpb-js-composer js-comp-ver-6.2.0 vc_responsive">
@@ -101,24 +170,23 @@
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3064"><a href="../overview/index.htm" aria-current="page">Overview</a></li>
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3265"><a href="../gallery/index.htm">Gallery</a></li>
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3065"><a href="../research/index.htm">Research</a></li>
-      <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-3066"><a href="../getinvolved/index.htm">Get Involved</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3066"><a href="../getinvolved/index.htm">Get Involved</a></li>
       <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3063"><a href="../donate/index.htm">Donate</a></li>
-      <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3063"><a href="../events/index.htm">Events</a></li>
+      <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-3063"><a href="../events/index.htm">Events</a></li>
     </ul>
   </div>
+  <div id="masthead" class="masthead img-bg" data-image-src="../wp-content/uploads/aaron-burden-6jYoil2GhVk-unsplash_gradient.jpg">
+      <span class="placeholder-overlay img-bg" style="background-image: url(../wp-content/uploads/aaron-burden-6jYoil2GhVk-unsplash_gradient.jpg);"></span>
 
-  <div id="masthead" class="masthead img-bg" data-image-src="../wp-content/uploads/brad-neathery-XrSzacdYbtQ-unsplash_gradient.jpg">
-    <span class="placeholder-overlay img-bg" style="background-image: url(../wp-content/uploads/brad-neathery-XrSzacdYbtQ-unsplash_gradient.jpg);"></span>
       <div class="container text-white">
-          <h1 class="line-decor">Get Involved</h1>
+        <h1 class="line-decor">Events</h1>
 
-          <div class="row">
-            <div class="column md-67">
-              <p></p>
-            </div>
+        <div class="row">
+          <div class="column md-67">
           </div>
         </div>
       </div>
+  </div>
 
   <div class="wrap container" role="document">
     <div class="content">
@@ -139,20 +207,42 @@
                 </div>
               </div>
             </div>
-            <div class="wpb_column vc_column_container vc_col-sm-6">
-              <div class="vc_column-inner">
-                <div class="wpb_wrapper">
-                  <div class="wpb_text_column wpb_content_element ">
-                    <div class="wpb_wrapper">
-                      <h2 class="line-decor"></h2>
-                        <p>We are always looking for new volunteers and we offer internship opportunities, so please contact us if you would like to get involved.</p>
-                        <p>If you are interested in incorporating this programme into your school or would like your staff trained, please get in touch with us at <a href="mailto:pydfoundationsa@gmail.com">pydfoundationsa@gmail.com</a>.</p>
-                        <p>If you would like to discuss a partnership between the PYDF and your university or organisation, please email us at <a href="mailto:pydfoundationsa@gmail.com">pydfoundationsa@gmail.com</a>.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <form id="myForm">
+                <label>Full Name</label>
+                <br/>
+                <input name="full_name" />
+                <br/>
+                <label>Email</label>
+                <br/>
+                <input name="email" />
+                <br/>
+                <label>Phone number</label>
+                <br/>
+                <input name="phone" />
+                <br/>
+                <label>PayFast Transaction number</label>
+                <br/>
+                <input name="phone" />
+                <br/>
+                <label>Slogan</label>
+                <br/>
+                <textarea name="slogan">
+                </textarea>
+                <br/>
+                <br/>
+              </form>
+
+              <!--<form action="https://sandbox.payfast.co.za/eng/process" method="post">
+               <input type="hidden" name="merchant_id" value="10000100">
+               <input type="hidden" name="merchant_key" value="46f0cd694581a">
+               <input type="hidden" name="return_url" value="https://www.pydfoundation.org/events/index.htm">
+               <input type="hidden" name="cancel_url" value="https://www.pydfoundation.org/events/index.htm">
+               <input type="hidden" name="notify_url" value="https://www.pydfoundation.org/wp-content/themes/schmidt-science-fellows/dist/scripts/notify.php">
+               <input type="hidden" name="amount" value="150.00">
+               <input type="hidden" name="item_name" value="Test Product">
+               <button onclick="SubForm()">Submit</button>
+             </form>-->
+             <?php echo $htmlForm; ?>
           </div>
         </section>
       </main><!-- /.main -->
@@ -184,8 +274,6 @@
       </div>
     </div>
   </footer>
-
-  <div id='donatebutton'><a href="../donate/index.htm"><img src='../wp-content/uploads/PayFast black logo_edit_orange.png' alt='Donate' /></a></div>
 
 
 </body>
