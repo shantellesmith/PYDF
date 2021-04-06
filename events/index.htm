@@ -1,58 +1,4 @@
-<?php
-/**
- * @param array $data
- * @param null $passPhrase
- * @return string
- */
-function generateSignature($data, $passPhrase = null) {
-    // Create parameter string
-    $pfOutput = '';
-    foreach( $data as $key => $val ) {
-        if($val !== '') {
-            $pfOutput .= $key .'='. urlencode( trim( $val ) ) .'&';
-        }
-    }
-    // Remove last ampersand
-    $getString = substr( $pfOutput, 0, -1 );
-    if( $passPhrase !== null ) {
-        $getString .= '&passphrase='. urlencode( trim( $passPhrase ) );
-    }
-    return md5( $getString );
-}
-// Construct variables
-$cartTotal = 150.00;// This amount needs to be sourced from your application
-$data = array(
-    // Merchant details
-    'merchant_id' => '10000100',
-    'merchant_key' => '46f0cd694581a',
-    'return_url' => 'https://www.pydfoundation.org/events/index.php',
-    'cancel_url' => 'https://www.pydfoundation.org/events/index.php',
-    'notify_url' => 'https://www.pydfoundation.org/wp-content/themes/schmidt-science-fellows/dist/scripts/notify.php',
-    // Buyer details
-    'name_first' => 'First Name',
-    'name_last'  => 'Last Name',
-    'email_address'=> 'test@test.com',
-    // Transaction details
-    'm_payment_id' => '1', //Unique payment ID to pass through to notify_url
-    'amount' => number_format( sprintf( '%.2f', $cartTotal ), 2, '.', '' ),
-    'item_name' => 'Order#1'
-);
-
-$signature = generateSignature($data);
-$data['signature'] = $signature;
-
-// If in testing mode make use of either sandbox.payfast.co.za or www.payfast.co.za
-$testingMode = true;
-$pfHost = $testingMode ? 'sandbox.payfast.co.za' : 'www.payfast.co.za';
-$htmlForm = '<form action="https://'.$pfHost.'/eng/process" method="post">';
-foreach($data as $name=> $value)
-{
-    $htmlForm .= '<input name="'.$name.'" type="hidden" value=\''.$value.'\' />';
-}
-$htmlForm .= '<button type="submit" value="Submit" /></form>';
-
-?>
-
+<!doctype html>
 <html lang="en-US" class="no-js">
 
 <head>
@@ -110,7 +56,8 @@ $htmlForm .= '<button type="submit" value="Submit" /></form>';
     .vc_custom_1565726338537 {
       margin-bottom: -80px !important;
     }
-  </style><noscript>
+  </style>
+  <noscript>
     <style>
       .wpb_animate_when_almost_visible {
         opacity: 1;
@@ -118,7 +65,13 @@ $htmlForm .= '<button type="submit" value="Submit" /></form>';
     </style>
   </noscript>
   <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
   <script>
+    var i =0;
+    function buttonClick() {
+      i++;
+      document.getElementById('inc').value = i;
+    }
     function SubForm() {
       $.ajax({
         url: 'https://api.apispreadsheets.com/data/10536/',
@@ -175,8 +128,8 @@ $htmlForm .= '<button type="submit" value="Submit" /></form>';
       <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6 current_page_item menu-item-3063"><a href="../events/index.htm">Events</a></li>
     </ul>
   </div>
-  <div id="masthead" class="masthead img-bg" data-image-src="../wp-content/uploads/aaron-burden-6jYoil2GhVk-unsplash_gradient.jpg">
-      <span class="placeholder-overlay img-bg" style="background-image: url(../wp-content/uploads/aaron-burden-6jYoil2GhVk-unsplash_gradient.jpg);"></span>
+  <div id="masthead" class="masthead img-bg" data-image-src="../wp-content/uploads/pablo-heimplatz-ZODcBkEohk8-unsplash-min.jpg">
+      <span class="placeholder-overlay img-bg" style="background-image: url(../wp-content/uploads/pablo-heimplatz-ZODcBkEohk8-unsplash-min.jpg);"></span>
 
       <div class="container text-white">
         <h1 class="line-decor">Events</h1>
@@ -192,7 +145,8 @@ $htmlForm .= '<button type="submit" value="Submit" /></form>';
     <div class="content">
       <main id="main-content" class="main" tabindex="-1">
         <section class="vc_section vc_custom_1565726338537">
-          <div class="vc_row wpb_row vc_row-fluid column-switch">
+          <img id="ballito" src="../wp-content/uploads/ballito.jpg"</img>
+          <div id="slogancomp" class="vc_row wpb_row vc_row-fluid column-switch">
             <div class="wpb_column vc_column_container vc_col-sm-6">
               <div class="vc_column-inner">
                 <div class="wpb_wrapper">
@@ -207,42 +161,49 @@ $htmlForm .= '<button type="submit" value="Submit" /></form>';
                 </div>
               </div>
             </div>
+
+            <h1>Stand a chance to win a 2 night stay in Ballito worth over R5000!</h1>
+            <h4>HOW TO ENTER:</h4>
+            <ul>
+              <li>Donate R100 at the PayFast link below.</li>
+            </ul>
+            <form action="https://www.payfast.co.za/eng/process" method="post">
+             <input type="hidden" name="merchant_id" value="10000100">
+             <input type="hidden" name="merchant_key" value="46f0cd694581a">
+             <input type="hidden" name="m_payment_id" id="inc" value="0">
+             <input type="hidden" name="amount" value="100.00">
+             <input type="hidden" name="item_name" value="Slogan Competition Submission">
+             <input type="hidden" name="email_confirmation" value="1">
+             <input type="hidden" name="confirmation_address" value="pydfoundationsa@gmail.com">
+             <input type="submit" onclick="buttonClick()" value="Donate Now">
+           </form>
+           <br/>
+           <ul>
+             <li>Submit a slogan that could be used by the PYDF, along with your contact details, at the form below. You will need to enter the PayFast payment identification number, that you received via SMS or email. Please use the same contact details on PayFast and on the submission form on this page.</li>
+           </ul>
+           <br/>
+           <h4>SUBMISSION FORM:</h4>
             <form id="myForm">
                 <label>Full Name</label>
-                <br/>
-                <input name="full_name" />
+                <input name="full_name" required/>
                 <br/>
                 <label>Email</label>
-                <br/>
-                <input name="email" />
+                <input name="email" required/>
                 <br/>
                 <label>Phone number</label>
+                <input name="phone" required/>
                 <br/>
-                <input name="phone" />
-                <br/>
-                <label>PayFast Transaction number</label>
-                <br/>
-                <input name="phone" />
+                <label>PayFast Payment ID number</label>
+                <input name="payment_id"/>
                 <br/>
                 <label>Slogan</label>
-                <br/>
                 <textarea name="slogan">
                 </textarea>
                 <br/>
-                <br/>
-              </form>
-
-              <!--<form action="https://sandbox.payfast.co.za/eng/process" method="post">
-               <input type="hidden" name="merchant_id" value="10000100">
-               <input type="hidden" name="merchant_key" value="46f0cd694581a">
-               <input type="hidden" name="return_url" value="https://www.pydfoundation.org/events/index.htm">
-               <input type="hidden" name="cancel_url" value="https://www.pydfoundation.org/events/index.htm">
-               <input type="hidden" name="notify_url" value="https://www.pydfoundation.org/wp-content/themes/schmidt-science-fellows/dist/scripts/notify.php">
-               <input type="hidden" name="amount" value="150.00">
-               <input type="hidden" name="item_name" value="Test Product">
-               <button onclick="SubForm()">Submit</button>
-             </form>-->
-             <?php echo $htmlForm; ?>
+             </form>
+             <button onclick="SubForm()">Submit</button>
+             <br/><br/>
+             <p>Terms and Conditions apply and can be found <a href='../wp-content/uploads/TermsAndConditions_SloganCompetition.pdf'>here</a>.</p>
           </div>
         </section>
       </main><!-- /.main -->

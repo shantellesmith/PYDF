@@ -4509,3 +4509,33 @@ button.mfp-close {
     width: 12%;
   }
 }
+
+#myForm label {
+  font-size: 18px;
+}
+
+@media screen and (min-width : 500px) {
+  #ballito {
+    display: block;
+    width: 60%;
+  }
+
+  #slogancomp {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+  }
+@media screen and (min-width:1024px) {
+  #ballito {
+    display: block;
+    float: right;
+    width: 50%;
+  }
+
+  #slogancomp {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    width: 60%;
+  }
+}
